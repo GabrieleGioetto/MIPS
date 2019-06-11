@@ -12,14 +12,14 @@
         jal bisestile
         la $a1, risultato
         move $t0, $0
-        cicloMain:
+        cicloStampa:
             lb $t1, ($a1)
             li $v0, 1
-            move $a0, $t1
-            syscall
+            move $a0, $t1 
+            syscall # STAMPA
             addi $t0, $t0, 1
             addi $a1, $a1, 1
-            blt $t0, $a2, cicloMain # contatore < 6 salta -> ciclo
+            blt $t0, $a2, cicloStampa # contatore < 6 salta -> ciclo
 
     li $v0, 10
     syscall
